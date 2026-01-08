@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  --primary: #2563eb;
+  --gradient: linear-gradient(135deg, #2563eb, #9333ea);
+  --bg-gray: #f9fafb;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+  background-color: white;
+  line-height: 1.7;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background: white;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.navbar nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+  color: var(--primary);
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: var(--gradient);
+  color: white;
+  text-align: center;
+  padding: 6rem 1rem;
+}
+
+.hero h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn,
+.btn-outline {
+  padding: 0.7rem 1.3rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn {
+  background: white;
+  color: var(--primary);
+}
+
+.btn-outline {
+  border: 2px solid white;
+  color: white;
+}
+
+.btn:hover,
+.btn-outline:hover {
+  opacity: 0.85;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  padding: 4rem 1rem;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.gray-bg {
+  background-color: var(--bg-gray);
+}
+
+/* ===== SKILLS ===== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.skill {
+  background: white;
+  border: 1px solid #e5e7eb;
+  padding: 0.8rem;
+  text-align: center;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: transform 0.2s ease;
+}
+
+.skill:hover {
+  transform: scale(1.05);
+}
+
+/* ===== EXPERIENCE ===== */
+#experience {
+  background: #fff;
+  padding: 4rem 1rem;
+}
+
+#experience h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 2.5rem;
+  color: var(--primary);
+  position: relative;
+}
+
+#experience h2::after {
+  content: '';
+  width: 60px;
+  height: 3px;
+  background: var(--gradient);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 3px;
+}
+
+/* Timeline layout */
+.experience-timeline {
+  position: relative;
+  margin: 0 auto;
+  max-width: 900px;
+  padding-left: 25px;
+  border-left: 3px solid var(--primary);
+}
+
+.experience-card {
+  position: relative;
+  background: var(--bg-gray);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Timeline dots */
+.experience-card::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 22px;
+  width: 16px;
+  height: 16px;
+  background: var(--gradient);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px white;
+}
+
+.experience-card h3 {
+  color: var(--primary);
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.experience-card h4 {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.experience-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.experience-card ul li {
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.experience-card ul li::before {
+  content: "▹";
+  color: var(--primary);
+  position: absolute;
+  left: 0;
+  font-size: 1rem;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .experience-timeline {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .experience-card::before {
+    display: none;
+  }
+}
+
+/* ===== PROJECTS ===== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: var(--bg-gray);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+/* ===== CONTACT ===== */
+.contact-links {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.contact-links a {
+  display: inline-block;
+  margin: 0.5rem 1rem;
+  text-decoration: none;
+  color: white;
+  background: var(--gradient);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  transition: transform 0.3s;
+}
+
+.contact-links a:hover {
+  transform: scale(1.05);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--gradient);
+  color: white;
+  font-size: 0.9rem;
+}
